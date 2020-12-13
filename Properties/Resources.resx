@@ -1698,4 +1698,13 @@ Are you sure?</value>
   <data name="Scanning" xml:space="preserve">
     <value>Scanning...</value>
   </data>
+  <data name="NoItemsSelected" xml:space="preserve">
+    <value>No items selected</value>
+  </data>
+  <data name="_0ItemSelected1" xml:space="preserve">
+    <value>{0} item selected, {1}</value>
+  </data>
+  <data name="_0ItemsSelected1" xml:space="preserve">
+    <value>{0} items selected, {1}</value>
+  </data>
 </root>

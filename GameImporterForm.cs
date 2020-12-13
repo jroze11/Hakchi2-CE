@@ -10,7 +10,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Sockets;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static com.clusterrr.hakchi_gui.Tasks.Tasker;
@@ -21,9 +20,9 @@ namespace com.clusterrr.hakchi_gui
     {
         public bool gameCopied = false;
         public IEnumerable<FoundGame> SelectedGames => listViewGames.SelectedItems.Cast<ListViewItem>().Where(item => item.Tag is FoundGame).Select(item => item.Tag as FoundGame);
-        public static string NoSelection => "No items selected";
-        public static string SingleSelection => "{0} item selected, {1}";
-        public static string MultiSelection => "{0} items selected, {1}";
+        public static string NoSelection => Resources.NoItemsSelected;
+        public static string SingleSelection => Resources._0ItemSelected1;
+        public static string MultiSelection => Resources._0ItemsSelected1;
         public class FoundGame
         {
             public string RemotePath;
@@ -164,6 +163,8 @@ namespace com.clusterrr.hakchi_gui
             {
                 labelStatus.Text = string.Format(listViewGames.SelectedItems.Count == 1 ? SingleSelection : MultiSelection, listViewGames.SelectedItems.Count, Shared.SizeSuffix(totalSize));
             }
+
+            buttonImport.Enabled = listViewGames.SelectedItems.Count > 0;
         }
 
         public static TaskFunc GameCopyTask(FoundGame game)
@@ -188,6 +189,13 @@ namespace com.clusterrr.hakchi_gui
                         Directory.CreateDirectory(Path.Combine(destinationPath, folder));
                     }
 
+                    FtpClient ftp = null;
+
+                    if (hakchi.Shell is INetworkShell)
+                    {
+                        ftp = new FtpClient(new Uri($"ftp://{(hakchi.Shell as INetworkShell).IPAddress}"), new NetworkCredential("root", "root"));
+                    }
+
                     foreach (Match match in new Regex(@"^(\d+)\s*\./(.*)$", RegexOptions.Multiline).Matches(hakchi.Shell.ExecuteSimple($"cd {Shared.EscapeShellArgument(game.RemotePath)}; find -type f -exec du {"{}"} \\;")))
                     {
                         var size = long.Parse(match.Groups[1].Value) * 1024;
@@ -203,9 +211,12 @@ namespace com.clusterrr.hakchi_gui
                                 tasker?.SetStatus($"{game.Desktop.Name} ({Shared.SizeSuffix(totalTransferred, 2)} / {Shared.SizeSuffix(game.Size, 2)})");
                             };
 
-                            if (size > 523264000 && hakchi.Shell is INetworkShell)
+                            if (hakchi.Shell is INetworkShell)
                             {
-                                Shared.ShellPipe($"cat {Shared.EscapeShellArgument($"{game.RemotePath}/{filename}")}", null, tracker, throwOnNonZero: true);
+                                using (var ftpStream = ftp.Retr($"{game.RemotePath}/{filename}"))
+                                {
+                                    ftpStream.CopyTo(tracker);
+                                }
                             }
                             else
                             {
@@ -215,6 +226,9 @@ namespace com.clusterrr.hakchi_gui
                             dataTransferred += size;
                         }
                     }
+
+                    ftp?.Dispose();
+                    ftp = null;
 
                     game.Desktop.Save(Path.Combine(destinationPath, $"{game.Desktop.Code}.desktop"));
 

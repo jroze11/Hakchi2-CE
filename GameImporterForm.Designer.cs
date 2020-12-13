@@ -108,6 +108,7 @@
             // 
             this.buttonImport.AutoSize = true;
             this.buttonImport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonImport.Enabled = false;
             this.buttonImport.Location = new System.Drawing.Point(675, 2);
             this.buttonImport.Margin = new System.Windows.Forms.Padding(2);
             this.buttonImport.MinimumSize = new System.Drawing.Size(0, 23);

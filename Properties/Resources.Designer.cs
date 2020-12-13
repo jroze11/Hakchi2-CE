@@ -61,6 +61,24 @@ namespace com.clusterrr.hakchi_gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} item selected, {1}.
+        /// </summary>
+        internal static string _0ItemSelected1 {
+            get {
+                return ResourceManager.GetString("_0ItemSelected1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} items selected, {1}.
+        /// </summary>
+        internal static string _0ItemsSelected1 {
+            get {
+                return ResourceManager.GetString("_0ItemsSelected1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abort.
         /// </summary>
         internal static string Abort {
@@ -3099,6 +3117,15 @@ namespace com.clusterrr.hakchi_gui.Properties {
         internal static string NoForAll {
             get {
                 return ResourceManager.GetString("NoForAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No items selected.
+        /// </summary>
+        internal static string NoItemsSelected {
+            get {
+                return ResourceManager.GetString("NoItemsSelected", resourceCulture);
             }
         }
         

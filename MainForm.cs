@@ -3679,6 +3679,7 @@ namespace com.clusterrr.hakchi_gui
                     
                 tasker.AttachView(new TaskerTaskbar());
                 tasker.AttachView(new TaskerForm());
+                tasker.SetTitle(Resources.ImportGames);
                 if (!hakchi.Shell.IsOnline)
                 {
                     tasker.AddTasks(new MembootTasks(MembootTasks.MembootTaskType.MembootRecovery).Tasks);
