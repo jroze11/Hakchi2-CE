@@ -108,6 +108,7 @@
             this.compressBoxArtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.centerBoxArtThumbnailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disableHakchi2PopupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enableInformationScrapeOnImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem25 = new System.Windows.Forms.ToolStripSeparator();
             this.developerToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devForceSshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -283,7 +284,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.enableInformationScrapeOnImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importGamesFromMiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).BeginInit();
@@ -891,6 +892,14 @@
             resources.ApplyResources(this.disableHakchi2PopupsToolStripMenuItem, "disableHakchi2PopupsToolStripMenuItem");
             this.disableHakchi2PopupsToolStripMenuItem.Click += new System.EventHandler(this.disableHakchi2PopupsToolStripMenuItem_Click);
             // 
+            // enableInformationScrapeOnImportToolStripMenuItem
+            // 
+            this.enableInformationScrapeOnImportToolStripMenuItem.Checked = true;
+            this.enableInformationScrapeOnImportToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.enableInformationScrapeOnImportToolStripMenuItem.Name = "enableInformationScrapeOnImportToolStripMenuItem";
+            resources.ApplyResources(this.enableInformationScrapeOnImportToolStripMenuItem, "enableInformationScrapeOnImportToolStripMenuItem");
+            this.enableInformationScrapeOnImportToolStripMenuItem.Click += new System.EventHandler(this.enableInformationScrapeOnImportToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem25
             // 
             this.toolStripMenuItem25.Name = "toolStripMenuItem25";
@@ -1082,6 +1091,7 @@
             this.saveStateManagerToolStripMenuItem,
             this.takeScreenshotToolStripMenuItem,
             this.saveDmesgOutputToolStripMenuItem,
+            this.importGamesFromMiniToolStripMenuItem,
             this.toolStripMenuItem6,
             this.openFTPInExplorerToolStripMenuItem,
             this.openTelnetToolStripMenuItem,
@@ -2158,13 +2168,11 @@
             resources.ApplyResources(this.progressBar1, "progressBar1");
             this.progressBar1.Name = "progressBar1";
             // 
-            // enableInformationScrapeOnImportToolStripMenuItem
+            // importGamesFromMiniToolStripMenuItem
             // 
-            this.enableInformationScrapeOnImportToolStripMenuItem.Checked = true;
-            this.enableInformationScrapeOnImportToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.enableInformationScrapeOnImportToolStripMenuItem.Name = "enableInformationScrapeOnImportToolStripMenuItem";
-            resources.ApplyResources(this.enableInformationScrapeOnImportToolStripMenuItem, "enableInformationScrapeOnImportToolStripMenuItem");
-            this.enableInformationScrapeOnImportToolStripMenuItem.Click += new System.EventHandler(this.enableInformationScrapeOnImportToolStripMenuItem_Click);
+            this.importGamesFromMiniToolStripMenuItem.Name = "importGamesFromMiniToolStripMenuItem";
+            resources.ApplyResources(this.importGamesFromMiniToolStripMenuItem, "importGamesFromMiniToolStripMenuItem");
+            this.importGamesFromMiniToolStripMenuItem.Click += new System.EventHandler(this.importGamesFromMiniToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -2474,6 +2482,7 @@
         private System.Windows.Forms.ToolStripMenuItem removePrefixToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem enableInformationScrapeOnImportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importGamesFromMiniToolStripMenuItem;
     }
 }
 

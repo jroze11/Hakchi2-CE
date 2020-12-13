@@ -3816,6 +3816,15 @@ namespace com.clusterrr.hakchi_gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scanning....
+        /// </summary>
+        internal static string Scanning {
+            get {
+                return ResourceManager.GetString("Scanning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scanning box art for {0}.
         /// </summary>
         internal static string ScanningCover {
@@ -4397,7 +4406,7 @@ namespace com.clusterrr.hakchi_gui.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to a14d982753518ea3438fe788e214ae1640f837dc2f076c2f6f1cf8b243e2ceb7.
         /// </summary>
         internal static string TheGamesDBKey {
             get {

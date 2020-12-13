@@ -1695,4 +1695,7 @@ Are you sure?</value>
   <data name="RunningAsAdministratorMessage" xml:space="preserve">
     <value>Running as administrator can cause issues, if you really want to run as administrator launch hakchi.exe with the --allowAdministrator argument.</value>
   </data>
+  <data name="Scanning" xml:space="preserve">
+    <value>Scanning...</value>
+  </data>
 </root>
