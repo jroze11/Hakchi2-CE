@@ -65,7 +65,7 @@
             this.listViewGames.HideSelection = false;
             this.listViewGames.Location = new System.Drawing.Point(3, 3);
             this.listViewGames.Name = "listViewGames";
-            this.listViewGames.Size = new System.Drawing.Size(794, 417);
+            this.listViewGames.Size = new System.Drawing.Size(794, 416);
             this.listViewGames.TabIndex = 0;
             this.listViewGames.UseCompatibleStateImageBehavior = false;
             this.listViewGames.View = System.Windows.Forms.View.Details;
@@ -87,6 +87,7 @@
             // 
             // tableLayoutPanelButtons
             // 
+            this.tableLayoutPanelButtons.AutoSize = true;
             this.tableLayoutPanelButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelButtons.ColumnCount = 2;
             this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -95,12 +96,12 @@
             this.tableLayoutPanelButtons.Controls.Add(this.buttonImport, 1, 0);
             this.tableLayoutPanelButtons.Controls.Add(this.labelStatus, 0, 0);
             this.tableLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelButtons.Location = new System.Drawing.Point(0, 423);
+            this.tableLayoutPanelButtons.Location = new System.Drawing.Point(0, 422);
             this.tableLayoutPanelButtons.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelButtons.Name = "tableLayoutPanelButtons";
             this.tableLayoutPanelButtons.RowCount = 1;
             this.tableLayoutPanelButtons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelButtons.Size = new System.Drawing.Size(800, 27);
+            this.tableLayoutPanelButtons.Size = new System.Drawing.Size(800, 28);
             this.tableLayoutPanelButtons.TabIndex = 1;
             this.tableLayoutPanelButtons.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanelButtons_Paint);
             // 
@@ -109,8 +110,8 @@
             this.buttonImport.AutoSize = true;
             this.buttonImport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonImport.Enabled = false;
-            this.buttonImport.Location = new System.Drawing.Point(675, 2);
-            this.buttonImport.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonImport.Location = new System.Drawing.Point(675, 3);
+            this.buttonImport.Margin = new System.Windows.Forms.Padding(2, 3, 2, 2);
             this.buttonImport.MinimumSize = new System.Drawing.Size(0, 23);
             this.buttonImport.Name = "buttonImport";
             this.buttonImport.Size = new System.Drawing.Size(123, 23);
@@ -127,7 +128,7 @@
             this.labelStatus.Location = new System.Drawing.Point(3, 3);
             this.labelStatus.Margin = new System.Windows.Forms.Padding(3);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(667, 21);
+            this.labelStatus.Size = new System.Drawing.Size(667, 22);
             this.labelStatus.TabIndex = 2;
             this.labelStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -142,6 +143,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Import Games from Mini";
             this.tableLayoutPanelMain.ResumeLayout(false);
+            this.tableLayoutPanelMain.PerformLayout();
             this.tableLayoutPanelButtons.ResumeLayout(false);
             this.tableLayoutPanelButtons.PerformLayout();
             this.ResumeLayout(false);

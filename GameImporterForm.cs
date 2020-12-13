@@ -33,6 +33,7 @@ namespace com.clusterrr.hakchi_gui
         public GameImporterForm()
         {
             InitializeComponent();
+            labelStatus.Text = NoSelection;
         }
 
         public GameImporterForm(List<FoundGame> games): this()
