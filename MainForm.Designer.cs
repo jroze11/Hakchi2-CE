@@ -138,6 +138,7 @@
             this.saveStateManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.takeScreenshotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveDmesgOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importGamesFromMiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.openFTPInExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openTelnetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -284,7 +285,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.importGamesFromMiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).BeginInit();
@@ -1089,9 +1089,9 @@
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveStateManagerToolStripMenuItem,
+            this.importGamesFromMiniToolStripMenuItem,
             this.takeScreenshotToolStripMenuItem,
             this.saveDmesgOutputToolStripMenuItem,
-            this.importGamesFromMiniToolStripMenuItem,
             this.toolStripMenuItem6,
             this.openFTPInExplorerToolStripMenuItem,
             this.openTelnetToolStripMenuItem,
@@ -1122,6 +1122,12 @@
             this.saveDmesgOutputToolStripMenuItem.Name = "saveDmesgOutputToolStripMenuItem";
             resources.ApplyResources(this.saveDmesgOutputToolStripMenuItem, "saveDmesgOutputToolStripMenuItem");
             this.saveDmesgOutputToolStripMenuItem.Click += new System.EventHandler(this.saveDmesgOutputToolStripMenuItem_Click);
+            // 
+            // importGamesFromMiniToolStripMenuItem
+            // 
+            this.importGamesFromMiniToolStripMenuItem.Name = "importGamesFromMiniToolStripMenuItem";
+            resources.ApplyResources(this.importGamesFromMiniToolStripMenuItem, "importGamesFromMiniToolStripMenuItem");
+            this.importGamesFromMiniToolStripMenuItem.Click += new System.EventHandler(this.importGamesFromMiniToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
@@ -2167,12 +2173,6 @@
             // 
             resources.ApplyResources(this.progressBar1, "progressBar1");
             this.progressBar1.Name = "progressBar1";
-            // 
-            // importGamesFromMiniToolStripMenuItem
-            // 
-            this.importGamesFromMiniToolStripMenuItem.Name = "importGamesFromMiniToolStripMenuItem";
-            resources.ApplyResources(this.importGamesFromMiniToolStripMenuItem, "importGamesFromMiniToolStripMenuItem");
-            this.importGamesFromMiniToolStripMenuItem.Click += new System.EventHandler(this.importGamesFromMiniToolStripMenuItem_Click);
             // 
             // MainForm
             // 

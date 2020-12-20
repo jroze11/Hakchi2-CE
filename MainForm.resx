@@ -751,6 +751,12 @@
   <data name="saveStateManagerToolStripMenuItem.Text" xml:space="preserve">
     <value>Save-State Manager</value>
   </data>
+  <data name="importGamesFromMiniToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="importGamesFromMiniToolStripMenuItem.Text" xml:space="preserve">
+    <value>Import games from mini</value>
+  </data>
   <data name="takeScreenshotToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
   </data>
@@ -762,12 +768,6 @@
   </data>
   <data name="saveDmesgOutputToolStripMenuItem.Text" xml:space="preserve">
     <value>Save dmesg output</value>
-  </data>
-  <data name="importGamesFromMiniToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="importGamesFromMiniToolStripMenuItem.Text" xml:space="preserve">
-    <value>Import games from mini</value>
   </data>
   <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 6</value>
@@ -4146,6 +4146,12 @@
   <data name="&gt;&gt;saveDmesgOutputToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;importGamesFromMiniToolStripMenuItem.Name" xml:space="preserve">
+    <value>importGamesFromMiniToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;importGamesFromMiniToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
     <value>toolStripMenuItem6</value>
   </data>
@@ -4589,12 +4595,6 @@
   </data>
   <data name="&gt;&gt;timerUpdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;importGamesFromMiniToolStripMenuItem.Name" xml:space="preserve">
-    <value>importGamesFromMiniToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;importGamesFromMiniToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
