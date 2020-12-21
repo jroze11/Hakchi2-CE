@@ -78,57 +78,61 @@ namespace com.clusterrr.hakchi_gui
                         }
 
                         hakchi.Shell.Execute($"find {paths} -name \"CLV-*.desktop\" | sort | tar -cf - -T -", null, desktopTarStream);
-                        hakchi.Shell.Execute($"du {paths}", null, sizeStream);
                         desktopTarStream.Seek(0, SeekOrigin.Begin);
-                        sizeStream.Seek(0, SeekOrigin.Begin);
 
                         var sizeRegex = new Regex(@"^(\d+)\s*(/.*)$", RegexOptions.Multiline);
-
-                        using (var extractor = ArchiveFactory.Open(desktopTarStream))
-                        using (var reader = extractor.ExtractAllEntries())
+                        if (desktopTarStream.Length > 0)
                         {
+                            hakchi.Shell.Execute($"du {paths}", null, sizeStream);
+                            sizeStream.Seek(0, SeekOrigin.Begin);
 
-                            while (reader.MoveToNextEntry())
+                            using (var extractor = ArchiveFactory.Open(desktopTarStream))
+                            using (var reader = extractor.ExtractAllEntries())
                             {
-                                var entry = reader.Entry;
-                                Trace.WriteLine(entry.Key);
-                                using (var entryStream = reader.OpenEntryStream())
+
+                                while (reader.MoveToNextEntry())
                                 {
-                                    var key = Path.GetDirectoryName($"/{entry.Key}").Replace('\\', '/');
-                                    var desktop = new DesktopFile(entryStream);
-
-                                    if (desktop.IconPath.EndsWith("/.storage"))
+                                    var entry = reader.Entry;
+                                    Trace.WriteLine(entry.Key);
+                                    using (var entryStream = reader.OpenEntryStream())
                                     {
-                                        // This is a linked game
-                                        key = $"{mountpoint}{desktop.IconPath}/{desktop.Code}";
-                                    }
+                                        var key = Path.GetDirectoryName($"/{entry.Key}").Replace('\\', '/');
+                                        var desktop = new DesktopFile(entryStream);
 
-                                    desktop.Exec = desktop.Exec.Replace(desktop.IconPath, "/var/games");
-                                    desktop.IconPath = "/var/games";
-                                    desktop.ProfilePath = "/var/saves";
+                                        if (desktop.IconPath.EndsWith("/.storage"))
+                                        {
+                                            // This is a linked game
+                                            key = $"{mountpoint}{desktop.IconPath}/{desktop.Code}";
+                                        }
 
-                                    if (!NesApplication.AllDefaultGames.ContainsKey(desktop.Code) && desktop.Bin != "/bin/chmenu")
-                                    {
-                                        foundGames.Add(key, new FoundGame() {
-                                            RemotePath = key,
-                                            Desktop = desktop,
-                                            Size = 0
-                                        });
+                                        desktop.Exec = desktop.Exec.Replace(desktop.IconPath, "/var/games");
+                                        desktop.IconPath = "/var/games";
+                                        desktop.ProfilePath = "/var/saves";
+
+                                        if (!NesApplication.AllDefaultGames.ContainsKey(desktop.Code) && desktop.Bin != "/bin/chmenu")
+                                        {
+                                            foundGames.Add(key, new FoundGame()
+                                            {
+                                                RemotePath = key,
+                                                Desktop = desktop,
+                                                Size = 0
+                                            });
+                                        }
                                     }
                                 }
                             }
-                        }
 
-                        using (var sr = new StreamReader(sizeStream))
-                        {
-                            var matches = sizeRegex.Matches(sr.ReadToEnd());
-                            foreach (Match match in matches)
+                            using (var sr = new StreamReader(sizeStream))
                             {
-                                var size = long.Parse(match.Groups[1].Value) * 1024;
-                                var path = match.Groups[2].Value;
-                                if (foundGames.ContainsKey(path))
+                                var matches = sizeRegex.Matches(sr.ReadToEnd());
+                                foreach (Match match in matches)
                                 {
-                                    foundGames[path].Size = size;
+                                    var size = long.Parse(match.Groups[1].Value) * 1024;
+                                    var path = match.Groups[2].Value;
+                                    if (foundGames.ContainsKey(path))
+                                    {
+                                        foundGames[path].Size = size;
+                                    }
                                 }
                             }
                         }

@@ -3684,6 +3684,7 @@ namespace com.clusterrr.hakchi_gui
                 {
                     tasker.AddTasks(new MembootTasks(MembootTasks.MembootTaskType.MembootRecovery).Tasks);
                     tasker.AddTasks(ShellTasks.MountBase);
+                    tasker.AddTasks(ShellTasks.CheckExternalStorage);
                 }
                 tasker.AddTask(GameImporterForm.FindGamesTask(foundGames));
                 if (tasker.Start() == Conclusion.Success)
