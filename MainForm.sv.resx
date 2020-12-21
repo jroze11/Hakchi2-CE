@@ -660,4 +660,7 @@
   <data name="centerBoxArtThumbnailToolStripMenuItem.Text" xml:space="preserve">
     <value>Centrera miniatyrbild för omslagsbild</value>
   </data>
+  <data name="importGamesFromMiniToolStripMenuItem.Text" xml:space="preserve">
+    <value>Importera spel från mini</value>
+  </data>
 </root>
